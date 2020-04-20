@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'weather-forecast';
+
+  //City Array
+  cityArray = [];
+
+  //Search City function which takes value as City name and push to array
+  searchCity(value) {
+    this.cityArray.push(value)
+    console.log(this.cityArray)
+  }
 }
