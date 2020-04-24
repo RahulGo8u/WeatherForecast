@@ -2,45 +2,58 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AppComponent } from '../app.component';
 import { WeatherAPIService } from '../api/weather-api.service';
 import { Chart } from 'chart.js';
+import { WorldweatherapiService } from '../api/worldweatherapi.service';
 
 @Component({
   selector: 'app-line-chart',
   templateUrl: './line-chart.component.html',
   styleUrls: ['./line-chart.component.css']
 })
-export class LineChartComponent{
+export class LineChartComponent {
   @ViewChild('lineChart') lineChartElement: ElementRef;
-  lineChart: any;ctx;
+  lineChart: any; ctx;
   constructor() {
   }
-  ngOnInit() {    
+  ngOnInit() {
   }
-  ngAfterViewInit() {    
+  ngAfterViewInit() {
     this.ctx = this.lineChartElement.nativeElement.getContext('2d');
     this.lineChart = new Chart(this.ctx, {
       type: 'line',
       data: {
-        labels: WeatherAPIService.weatherDates,
+        labels: WorldweatherapiService.weatherDates1,
         datasets: [
           {
-            label: 'Temperature (C)',
-            data: WeatherAPIService.maxTemp,
-            borderColor: '#2196f3',
-            fill: false,
+            label: 'Min Temp (C)',
+            data: WorldweatherapiService.minTemp1,
+            borderColor: 'red',
+            fill: true,
             borderWidth: 2,
-            backgroundColor: 'transparent',
+            backgroundColor: 'pink'
           },
           {
-            label: 'Temperature (C)',
-            data: WeatherAPIService.minTemp,
-            borderColor: '#2196f3',
-            fill: false,
+            label: 'Avg Temp (C)',
+            data: WorldweatherapiService.avgTemp1,
+            borderColor: 'green',
+            fill: true,
             borderWidth: 2,
-            backgroundColor: 'black'
+            backgroundColor: 'lightgreen'
+          },
+          {
+            label: 'Max Temp (C)',
+            data: WorldweatherapiService.maxTemp1,
+            borderColor: 'blue',
+            fill: true,
+            borderWidth: 2,
+            backgroundColor: 'aqua'
           }
         ]
       },
       options: {
+        title: {
+          display: true,
+          text: "Temp in Celcius with Min/Avg/Max"
+        },
         legend: {
           display: false,
         },
@@ -49,7 +62,7 @@ export class LineChartComponent{
             type: "time",
             time: {
               unit: 'hour',
-              unitStepSize: 3,
+              unitStepSize: 24,
               round: 'hour',
               tooltipFormat: "h:mm:ss a",
               displayFormats: {

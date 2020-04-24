@@ -6,7 +6,7 @@ import { DatePipe } from '@angular/common';
   providedIn: 'root'
 })
 export class WorldweatherapiService {
-  //input api key
+  //input your API key
   appid = '';
   url = 'https://api.worldweatheronline.com/premium/v1/past-weather.ashx?key=' + this.appid +'&q=';
   static response1; static weatherDates1; static minTemp1; static maxTemp1; static avgTemp1;
