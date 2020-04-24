@@ -5,11 +5,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # ScreenShots
 
-Markup : ![picture alt](https://github.com/RahulGo8u/WeatherForecast/blob/master/resources/2_OutputCityDetails.jpg "City Details")
+![picture alt](https://github.com/RahulGo8u/WeatherForecast/blob/master/resources/2_OutputCityDetails.jpg "City Details")
 
-Markup : ![picture alt](https://github.com/RahulGo8u/WeatherForecast/blob/master/resources/3_OutputForecastDetails.jpg "Weather Forecast details")
+![picture alt](https://github.com/RahulGo8u/WeatherForecast/blob/master/resources/3_OutputForecastDetails.jpg "Weather Forecast details")
 
-Markup : ![picture alt](https://github.com/RahulGo8u/WeatherForecast/blob/master/resources/4_OutputLineGraph.jpg "Line Graph for past 7 days")
+![picture alt](https://github.com/RahulGo8u/WeatherForecast/blob/master/resources/4_OutputLineGraph.jpg "Line Graph for past 7 days")
 
 
 <b>Two APIs are used for fetching weather details:</b>
