@@ -4,10 +4,22 @@
       <h1 class="text-center text-primary">Weather Forecast</h1>
       <div class="input-group-prepend">
         <input type="text" #city class="form-control" placeholder="Enter City" name="city" ngModel>
-        <span class="input-group-text" (click)="searchCity(city.value)">
-          Search
-        </span>
+        <button (click)="searchCity(city.value)" type="button" class="input-group-text">Get Forecast</button>
       </div>
     </div>
   </form>
 </div>
+<div *ngIf="showTable">
+  <h2>
+    <img src="https://openweathermap.org/img/w/{{imgIcon}}.png" class="forecast-icon" alt="forecast">
+    {{weather |titlecase}} in {{cityName}}, {{countryName}}
+  </h2>
+  <app-city></app-city>
+  <br/>
+  <app-table></app-table>
+</div>
+<div *ngIf="showCharts">
+  <app-bar-chart></app-bar-chart>
+<br/>
+</div>
+<div class="row" style="height:10px"></div>
