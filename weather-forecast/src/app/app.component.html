@@ -12,7 +12,7 @@
 <div *ngIf="showTable">
   <h2>
     <img src="https://openweathermap.org/img/w/{{imgIcon}}.png" class="forecast-icon" alt="forecast">
-    {{weather |titlecase}} in {{cityName}}, {{countryName}}
+    {{weather |titlecase}} in {{cityName |titlecase}}, {{countryName}}
   </h2>
   <app-city></app-city>
   <br/>
